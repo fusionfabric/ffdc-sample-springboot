@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    org.springframework.web: TRACE
+    org.springframework.security: TRACE
+    com.finastra: DEBUG
+
+finastra:
+    oauth2:
+      client:
+        grant-type: client_credentials
+        clientId: <%YOUR-CLIENT-ID%>
+        clientSecret: <%YOUR-SECRET-KEY%>
+        accessTokenUri: https://api.fusionfabric.cloud/login/v1/sandbox/oidc/token
+        scope: openid
+
+spring.devtools.restart.enabled: true
+
+ffdcapi:
+  baseUrl: https://api.fusionfabric.cloud

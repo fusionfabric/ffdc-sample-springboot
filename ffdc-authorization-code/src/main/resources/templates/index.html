@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <title>FusionFabric.cloud Sample App - Spring Boot OAuth 2.0 Login</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1>OAuth 2.0 Login with Spring Security</h1>
+<div>
+    You successfully logged in to <span style="font-weight:bold" th:text="${userName}"></span>
+    via the Spring Boot Sample App <span style="font-weight:bold" th:text="${clientName}"></span>
+</div>
+<div>&nbsp;</div>
+<div>
+    <span style="font-weight:bold">Access token value:</span><br>
+    <span th:text="${accessTokenValue}"></span><br><br>
+
+    <span style="font-weight:bold">Access token scopes:</span>
+    <ul>
+        <li th:each="scope : ${accessTokenScopes}">
+            <span style="font-weight:bold" th:text="${scope}"></span>
+        </li>
+    </ul>
+    <span style="font-weight:bold">User Attributes:</span>
+    <ul>
+        <li th:each="userAttribute : ${userAttributes}">
+            <span style="font-weight:bold" th:text="${userAttribute.key}"></span>: <span th:text="${userAttribute.value}"></span>
+        </li>
+    </ul>
+    <h2><a href="/reference-resources/counterparties">Static data for trade capture API, counter-parties list</a></h2>
+    <h2><a href="/reference-resources/legal-entities">Static data for trade capture API, legal entities list</a></h2>
+    <h2><a href="/reference-resources/trader">Static data for trade capture API, trader list</a></h2>
+</div>
+</body>
+</html>

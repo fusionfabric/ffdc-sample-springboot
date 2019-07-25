@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+logging:
+  level:
+    org.springframework.web: TRACE
+    org.springframework.security: TRACE
+    com.finastra: DEBUG
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          finastra:
+            client-id: <%YOUR-CLIENT-ID%>
+            client-secret: <%YOUR-SECRET-KEY%>
+            clientName: Finastra
+            authorization-grant-type: authorization_code
+            redirectUriTemplate: http://localhost:8081/login/oauth2/code/finastra
+            scope:
+            - openid
+
+        provider:
+          finastra:
+            authorization-uri: https://api.fusionfabric.cloud/login/v1/sandbox/oidc/authorize
+            token-uri: https://api.fusionfabric.cloud/login/v1/sandbox/oidc/token
+            jwk-set-uri: https://api.fusionfabric.cloud/login/v1/oidc/jwks.json
+            user-name-attribute: username
+
+spring.devtools.restart.enabled: true
+
+ffdcapi:
+  baseUrl: https://api.fusionfabric.cloud
