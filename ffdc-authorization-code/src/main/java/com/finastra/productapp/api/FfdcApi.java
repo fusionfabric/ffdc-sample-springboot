@@ -1,5 +1,6 @@
-package com.finastra.productapp.api.ffdc;
+package com.finastra.productapp.api;
 
+import com.finastra.productapp.model.TradeCaptureStaticDataList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
@@ -18,11 +19,11 @@ public class FfdcApi {
     @Autowired
     private RestTemplate restTemplate;
 
-    public ResponseEntity<?> getCurrencyResources () {
-        
+    public TradeCaptureStaticDataList getReferenceSourcesLegalEntities () {
         UriComponents uriBuilder = UriComponentsBuilder
-                .fromUriString(baseUrl+"/referential/v1/currencies")
+                .fromUriString(baseUrl + "/capital-market/trade-capture/static-data/v1/reference-sources")
+                .queryParam("applicableEntities", "legal-entities")
                 .build();
-        return restTemplate.exchange(uriBuilder.toUri(), HttpMethod.GET, null, Object.class);
+        return restTemplate.exchange(uriBuilder.toUri(), HttpMethod.GET, null, TradeCaptureStaticDataList.class).getBody();
     }
 }

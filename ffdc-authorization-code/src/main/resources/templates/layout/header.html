@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<header th::fragment="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Finastra Spring Boot Authorization Code Sample</span>
+    </nav>
+    <h6>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <span th:text="${strongAuth} ? 'JSON Web Key Authentication' : 'Secret Key Authentication' "></span>
+        </nav>
+    </h6>
+
+    <div class="btn-toolbar" role="toolbar">
+
+        <form action="/results">
+            <button type="submit" class="btn btn-primary">Get Data</button>
+        </form>
+
+        <form th:action="@{/appLogout}" method="POST">
+            <button type="submit" class="btn btn-danger">Remove Access Token</button>
+        </form>
+
+    </div>
+    <hr>
+</header>
+</html>

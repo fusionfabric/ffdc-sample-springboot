@@ -26,3 +26,4 @@
 
 # Application settings and secrets
 application.yml
+*.pem
