@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="layout">
+<main class="main" layout:fragment="content">
+    <div class="row" >
+        <div class="col-lg-2 col-md-4 col-sm-6" th:each="entity: ${entities}">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${entity.id}"></h5>
+                    <h6 class="card-subtitle mb-2 text-muted" th:text="${entity.description}"></h6>
+                    <p></p>
+                    <p class="card-text">
+                        <strong>Applicable entities:</strong>
+                    </p>
+                    <ul class="list-group list-group-flush" th:each="detail: ${entity.applicableEntities}">
+                        <li class="list-group-item" th:text="${detail}"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</html>

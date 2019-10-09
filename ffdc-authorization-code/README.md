@@ -10,22 +10,39 @@ This sample client application demonstrates the implementation of the OAuth2 Aut
 
 > The values for `<%authorization-endpoint%>`, `<%token-endpoint%>`, and `<%jwk-set-uri%>` are provided by the [Discovery service](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator%20Developer%20Portal&board=Home&uri=oauth2-grants.html#discovery-service) of the **Fusion**Fabric.cloud Developer Portal.
 
-4. Run this sample app with Maven:
+4. (Optional) If you want to use private key authentication, instead of the standard authentication based on secret value, follow [the steps from the documentation](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator%20Developer%20Portal&board=Home&uri=oauth2-grants.html#jwk-auth-procedure) to sign and upload a JSON Web Key to your application, and save the private RSA key in a file named **private.key**. Edit `application.yml` as follows:
++ remove or comment the line containing the secret value: 
+```
+finastra:
+    oauth2:
+        client:
+#           clientSecret:"<%YOUR-SECRET-KEY%>"
+```
++ set `auth.strong=True`
++ set `auth.kid="<%YOUR-KEY-ID%>"`
+
+> Store your private key file - **private.key** - in  **src/main/resources** as **pkcs8_private.pem**, after you convert it to the **pkcs8** format:
+```
+openssl pkcs8 -topk8 -in private.key -nocrypt -out pkcs8_private.pem
+```  
+
+5. Run this sample app with Maven:
 
 ```sh
 mvn spring-boot:run
 ```
 
-5. Point your browser to http://localhost:8081. 
-6. Log into the **Fusion**Fabric.cloud Developer Portal Authorization Server with one of the following credentials:
+6. Point your browser to http://localhost:8081. The home page of the sample application is displayed.
+7. Click **Get Data**. You are redirected to the **Fusion**Fabric.cloud Developer Portal Authorization Server login page. 
+8. Log into **Fusion**Fabric.cloud Developer Portal Authorization Server with one of the following credentials:
 
 | User        | Password |
 | :---------- | :------- |
 | `ffdcuser1` | `123456` |
 | `ffdcuser2` | `123456` |
 
-The home page of this sample application is displayed.
+The legal entities from the **Static Data for Trade Capture** API are displayed.
 
-7. (Optional) Click the links in the home page to get the lists of the counterparties, legal entities and traders, from the **Static Data for Trade Capture** API.
+9. (Optional) Click **Remove Access Token** to delete the access token from your browser session.
 
-> To learn how to create this sample project from scratch, follow the tutorial from the [Developer Portal Documentation](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator&board=Home&uri=sample-client-springboot.html). 
+> To learn how to create this sample project from scratch, follow the tutorial from the [Developer Portal Documentation](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator&board=Home&uri=sample-client-springboot.html).

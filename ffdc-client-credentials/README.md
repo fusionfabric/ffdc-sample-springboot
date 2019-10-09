@@ -8,15 +8,31 @@ This sample client application demonstrates the implementation of the OAuth2 Cli
 2. Clone the current project.
 3. Copy `src/main/resources/application.yml.sample` to `src/main/resources/application.yml`, open it, and enter  `<%YOUR-CLIENT-ID%>`, and `<%YOUR-SECRET-KEY%>` of the application created at the step 1.  
 
-> The value for `<%accessTokenUri%>` is provided by the [Discovery service](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator%20Developer%20Portal&board=Home&uri=oauth2-grants.html#discovery-service) of the **Fusion**Fabric.cloud Developer Portal.
-	+ `<%get-currencies-url>` - the URL of the `GET` **/currencies** endpoint of the **Referential Data** API. 
+> The value for `finastra.oauth2.client.accessTokenUri` is provided by the [Discovery service](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator%20Developer%20Portal&board=Home&uri=oauth2-grants.html#discovery-service) of the **Fusion**Fabric.cloud Developer Portal.
 
-4. Run this sample app with Maven:
+4. (Optional) If you want to use private key authentication, instead of the standard authentication based on secret value, follow [the steps from the documentation](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator%20Developer%20Portal&board=Home&uri=oauth2-grants.html#jwk-auth-procedure) to sign and upload a JSON Web Key to your application, and save the private RSA key in a file named **private.key**. Edit `application.yml` as follows:
++ remove or comment the line containing the secret value: 
+```
+finastra:
+    oauth2:
+        client:
+#           clientSecret:"<%YOUR-SECRET-KEY%>"
+```
++ set `auth.strong=True`
++ set `auth.kid="<%YOUR-KEY-ID%>"`
+
+> Store your private key file - **private.key** - in  **src/main/resources** as **pkcs8_private.pem**, after you convert it to the **pkcs8** format:
+```
+openssl pkcs8 -topk8 -in private.key -nocrypt -out pkcs8_private.pem
+``` 
+
+5. Run this sample app with Maven:
 
 ```sh
 mvn spring-boot:run
 ```
 
-5. Point your browser to http://localhost:8081. The list of currencies is retrieved from the **Referential Data** API.
+6. Point your browser to http://localhost:8081. The home page of the sample application is displayed.
+7. (Optional) Click **Get Data** to retrieve list of currencies from the **Referential Data** API. 
 
-> To learn how to create this sample project from scratch, follow the tutorial from [Developer Portal Documentation](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator%20Developer%20Portal&board=Home&uri=sample-client-springboot.html). 
+ 

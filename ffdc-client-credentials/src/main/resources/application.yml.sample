@@ -3,9 +3,16 @@ server:
 
 logging:
   level:
-    org.springframework.web: TRACE
-    org.springframework.security: TRACE
+    org.springframework.web: INFO
+    org.springframework.security: INFO
     com.finastra: DEBUG
+ffdcapi:
+  baseUrl: https://api.fusionfabric.cloud
+  loginUrl: ${ffdcapi.baseUrl}/login/v1
+
+auth:
+  keyId: <%keyID%>
+  strong: false
 
 finastra:
     oauth2:
@@ -13,10 +20,5 @@ finastra:
         grant-type: client_credentials
         clientId: <%YOUR-CLIENT-ID%>
         clientSecret: <%YOUR-SECRET-KEY%>
-        accessTokenUri: https://api.fusionfabric.cloud/login/v1/sandbox/oidc/token
+        accessTokenUri: ${ffdcapi.loginUrl}/sandbox/oidc/token
         scope: openid
-
-spring.devtools.restart.enabled: true
-
-ffdcapi:
-  baseUrl: https://api.fusionfabric.cloud

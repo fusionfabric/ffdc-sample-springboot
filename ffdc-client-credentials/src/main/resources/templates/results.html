@@ -1,0 +1,15 @@
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="layout">
+<main class="main" layout:fragment="content">
+    <div class="row" >
+        <div class="col-lg-2 col-md-4 col-sm-6" th:each="country: ${countries}">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${country.name}"></h5>
+                    <h6 class="card-subtitle mb-2 text-muted" th:text="${country.currency}"></h6>
+                    <h7 class="card-subtitle mb-2 text-muted" th:text="${country.alpha3code}"></h7>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</html>
