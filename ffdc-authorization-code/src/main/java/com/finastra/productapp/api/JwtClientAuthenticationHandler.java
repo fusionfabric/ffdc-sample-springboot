@@ -3,7 +3,8 @@ package com.finastra.productapp.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.jwt.Jwt;
@@ -21,8 +22,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-@Slf4j
 public class JwtClientAuthenticationHandler implements ClientAuthenticationHandler, InitializingBean {
+
+    private static final Logger log = LoggerFactory.getLogger(JwtClientAuthenticationHandler.class);
 
     public static final String CLIENT_ASSERTION_TYPE = "client_assertion_type";
     public static final String CLIENT_ASSERTION = "client_assertion";

@@ -1,10 +1,16 @@
 package com.finastra.productapp.model;
 
-import lombok.Data;
 
-@Data
+
 public class Countries {
 
     public Country [] countries;
 
+    public Country[] getCountries() {
+        return countries;
+    }
+
+    public void setCountries(Country[] countries) {
+        this.countries = countries;
+    }
 }
