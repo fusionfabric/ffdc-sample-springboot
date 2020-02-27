@@ -4,7 +4,7 @@ This sample client application demonstrates the implementation of the OAuth2 Cli
 
 **To run this sample**
 
-1. Register an application on [**Fusion**Fabric.cloud Developer Portal](https://developer.fusionfabric.cloud), and include the [Referential Data*](https://developer.fusionfabric.cloud/api/referential-v1-353f3933-c305-4898-88d5-cd6cd167f745/docs) API. Use `*` as the reply URL.
+1. Register an application on [**Fusion**Fabric.cloud Developer Portal](https://developer.fusionfabric.cloud), and include the [Referential Data](https://developer.fusionfabric.cloud/api/referential-v1-353f3933-c305-4898-88d5-cd6cd167f745/docs) API. Use `*` as the reply URL.
 2. Clone the current project.
 3. Copy `src/main/resources/application.yml.sample` to `src/main/resources/application.yml`, open it, and enter  `<%YOUR-CLIENT-ID%>`, and `<%YOUR-SECRET-KEY%>` of the application created at the step 1.  
 
