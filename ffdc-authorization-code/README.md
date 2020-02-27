@@ -8,7 +8,7 @@ This sample client application demonstrates the implementation of the OAuth2 Aut
 2. Clone the current project.
 3. Copy `src/main/resources/application.yml.sample` to `src/main/resources/application.yml`, open it, and enter `<%YOUR-CLIENT-ID%>`, and `<%YOUR-SECRET-KEY%>` of the application created at the step 1.   
 
-> The values for `<%authorization-endpoint%>`, `<%token-endpoint%>`, and `<%jwk-set-uri%>` are provided by the [Discovery service]https://developer.fusionfabric.cloud/documentation/oauth2-grants#discovery-service) of the **Fusion**Fabric.cloud Developer Portal.
+> The values for `<%authorization-endpoint%>`, `<%token-endpoint%>`, and `<%jwk-set-uri%>` are provided by the [Discovery service](https://developer.fusionfabric.cloud/documentation/oauth2-grants#discovery-service) of the **Fusion**Fabric.cloud Developer Portal.
 
 4. (Optional) If you want to use private key authentication, instead of the standard authentication based on secret value, follow [the steps from the documentation](https://developer.fusionfabric.cloud/ffdc-documentation/oauth2-grants.html#jwk-auth-procedure) to sign and upload a JSON Web Key to your application, and save the private RSA key in a file named **private.key**. Edit `application.yml` as follows:
 + remove or comment the line containing the secret value: 
