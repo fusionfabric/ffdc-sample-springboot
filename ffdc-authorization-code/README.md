@@ -4,13 +4,13 @@ This sample client application demonstrates the implementation of the OAuth2 Aut
 
 **To run this sample**
 
-1. Register an application on [**Fusion**Fabric.cloud Developer Portal](https://developer.fusionfabric.cloud), and include the **Static Data for Trade Capture** API. Use `http://localhost:8081/login/oauth2/code/finastra` as the reply URL.
+1. Register an application on [**Fusion**Fabric.cloud Developer Portal](https://developer.fusionfabric.cloud), and include the [Static Data for Trade Capture](https://developer.fusionfabric.cloud/api/trading-trade-capture-static-data-8faddb99-a71f-464d-9c3d-2220baacc299/docs) API. Use `http://localhost:8081/login/oauth2/code/finastra` as the reply URL.
 2. Clone the current project.
 3. Copy `src/main/resources/application.yml.sample` to `src/main/resources/application.yml`, open it, and enter `<%YOUR-CLIENT-ID%>`, and `<%YOUR-SECRET-KEY%>` of the application created at the step 1.   
 
-> The values for `<%authorization-endpoint%>`, `<%token-endpoint%>`, and `<%jwk-set-uri%>` are provided by the [Discovery service](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator%20Developer%20Portal&board=Home&uri=oauth2-grants.html#discovery-service) of the **Fusion**Fabric.cloud Developer Portal.
+> The values for `<%authorization-endpoint%>`, `<%token-endpoint%>`, and `<%jwk-set-uri%>` are provided by the [Discovery service]https://developer.fusionfabric.cloud/documentation/oauth2-grants#discovery-service) of the **Fusion**Fabric.cloud Developer Portal.
 
-4. (Optional) If you want to use private key authentication, instead of the standard authentication based on secret value, follow [the steps from the documentation](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator%20Developer%20Portal&board=Home&uri=oauth2-grants.html#jwk-auth-procedure) to sign and upload a JSON Web Key to your application, and save the private RSA key in a file named **private.key**. Edit `application.yml` as follows:
+4. (Optional) If you want to use private key authentication, instead of the standard authentication based on secret value, follow [the steps from the documentation](https://developer.fusionfabric.cloud/ffdc-documentation/oauth2-grants.html#jwk-auth-procedure) to sign and upload a JSON Web Key to your application, and save the private RSA key in a file named **private.key**. Edit `application.yml` as follows:
 + remove or comment the line containing the secret value: 
 ```
 finastra:
@@ -45,4 +45,4 @@ The legal entities from the **Static Data for Trade Capture** API are displayed.
 
 9. (Optional) Click **Remove Access Token** to delete the access token from your browser session.
 
-> To learn how to create this sample project from scratch, follow the tutorial from the [Developer Portal Documentation](https://developer.fusionfabric.cloud/documentation?workspace=FusionCreator&board=Home&uri=sample-client-springboot.html).
+> To learn how to create this sample project from scratch, follow the tutorial from the [Developer Portal Documentation](https://developer.fusionfabric.cloud/documentation/sample-client-springboot).
