@@ -46,4 +46,4 @@ The legal entities from the **Static Data for Trade Capture** API are displayed.
 
 9. (Optional) Click **Remove Access Token** to delete the access token from your browser session.
 
-> To learn how to create this sample project from scratch, follow the tutorial from the [Developer Portal Documentation](https://developer.fusionfabric.cloud/documentation/sample-client-springboot).
+> To learn how to create this sample project from scratch, follow the tutorial from the [Developer Portal Documentation](https://developer.fusionfabric.cloud/documentation/examples/sample-client-springboot).
