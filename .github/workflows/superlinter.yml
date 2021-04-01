@@ -23,3 +23,6 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JAVA: false
+          VALIDATE_ALL_CODEBASE: false
+          FILTER_REGEX_EXCLUDE: .*src/.*
