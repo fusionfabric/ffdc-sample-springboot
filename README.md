@@ -12,8 +12,6 @@ These sample client applications are released under the MIT License. See [LICENS
 [![FOSSA Status](https://app.fossa.com/api/projects/custom%2B24247%2Fgithub.com%2Ffusionfabric%2Fffdc-sample-springboot.svg?type=shield)](https://app.fossa.com/projects/custom%2B24247%2Fgithub.com%2Ffusionfabric%2Fffdc-sample-springboot?ref=badge_shield)
 
 
-[![codecov](https://codecov.io/gh/jkabuya/sample/branch/main/graph/badge.svg?token=ZKGDR1JF0P)](https://codecov.io/gh/jkabuya/sample)
-
 
 
 
