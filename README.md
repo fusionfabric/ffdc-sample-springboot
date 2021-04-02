@@ -6,3 +6,10 @@ To run the sample, go to the sub-project directories - **ffdc-authorization-code
 
 These sample client applications are released under the MIT License. See [LICENSE](LICENSE) for details.
 
+
+![example workflow](https://github.com/fusionfabric/ffdc-sample-springboot/actions/workflows/superlinter.yml/badge.svg)
+
+
+
+
+
