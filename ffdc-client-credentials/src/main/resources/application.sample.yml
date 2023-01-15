@@ -11,14 +11,17 @@ ffdcapi:
   loginUrl: ${ffdcapi.baseUrl}/login/v1
 
 auth:
-  keyId: <%keyID%>
   strong: false
 
-finastra:
+spring:
+  security:
     oauth2:
       client:
-        grant-type: client_credentials
-        clientId: <%YOUR-CLIENT-ID%>
-        clientSecret: <%YOUR-SECRET-KEY%>
-        accessTokenUri: ${ffdcapi.loginUrl}/sandbox/oidc/token
-        scope: openid
+        registration:
+          finastra:
+            client-id: <%YOUR-CLIENT-ID%>
+            client-secret: <%YOUR-SECRET-KEY%>
+            authorization-grant-type: client_credentials
+        provider:
+          finastra:
+            token-uri: ${ffdcapi.loginUrl}/sandbox/oidc/token
