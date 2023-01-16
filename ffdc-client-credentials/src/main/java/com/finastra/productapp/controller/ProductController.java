@@ -1,26 +1,22 @@
-package com.finastra.productapp.endpoint;
+package com.finastra.productapp.controller;
 
-import com.finastra.productapp.api.FfdcApi;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.finastra.productapp.api.service.FfdcService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequiredArgsConstructor
 class ProductController {
-
-    @Autowired
-    private FfdcApi ffdcApi;
-
     @Value("${auth.strong}")
     private boolean strongAuth;
+    private final FfdcService ffdcService;
 
     @RequestMapping("/results")
     public String resultsPage (Model model){
-        model.addAttribute("countries" ,ffdcApi.getCurrencyResources().getCountries());
+        model.addAttribute("countries" ,ffdcService.getReferentialDataCountries().getCountries());
         model.addAttribute("strongAuth", strongAuth);
         return "results";
     }

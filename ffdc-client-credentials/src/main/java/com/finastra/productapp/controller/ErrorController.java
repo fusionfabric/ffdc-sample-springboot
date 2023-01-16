@@ -1,4 +1,4 @@
-package com.finastra.productapp.endpoint;
+package com.finastra.productapp.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
